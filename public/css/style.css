@@ -607,23 +607,17 @@ body {
     display: flex;
 }
 
-.location-map a{
-    width: calc(50% - 1rem);
-}
-
 
 .location-map img {
-    width: calc(100% - 1rem);
+    width: 100%;
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    cursor: pointer;
+    /* cursor: pointer; */
     object-fit: cover;
 }
 
-.location-map img:hover {
-    transform: scale(1.02);
-}
+
 
 .location-highlights {
     background: var(--light-gray);
