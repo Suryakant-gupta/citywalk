@@ -424,6 +424,13 @@ body {
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
+.stat-item img{
+    width: 50px;
+    height: 50px;
+ 
+}
+
+
 
 .stat-item:hover {
     transform: translateY(-5px);
@@ -435,6 +442,19 @@ body {
     font-weight: bold;
     color: var(--dark-gray);
 }
+.anim {
+    animation: zoomInOut 2s infinite alternate ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
 
 
 
@@ -453,6 +473,8 @@ body {
 .price-table-wrapper {
     overflow-x: auto;
     margin-bottom: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.273);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .price-table {
     width: 100%;
@@ -476,6 +498,8 @@ body {
 }
 .price-doc {
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.273);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* margin-top: 2rem; */
 }
 .price-image {
@@ -494,6 +518,7 @@ body {
 }
 .price-grid{
     display: none;
+    /* border: 1px solid rgba(0, 0, 0, 0.273); */
 }
 
 
@@ -631,12 +656,13 @@ body {
 }
 
 .feature-list {
-    list-style: none;
+    /* list-style-type: disc !important; */
     margin-top: 2rem;
 }
 
 
 .feature-item {
+    /* list-style-type: disc !important; */
     margin-bottom: 15px;
     padding-bottom: 10px;
 }
@@ -661,8 +687,9 @@ body {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    /* list-style-type: none ;   */
+    list-style-type: none ;  
     list-style-position: inside;
+    /* list-style-type: disc !important; */
 }
 
 
@@ -769,18 +796,8 @@ body {
     list-style-position: inside;
 }
 
-.highlight-list li {
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
 
-.highlight-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-}
+
 
 /* Lead Form */
 .lead-form {
@@ -857,7 +874,7 @@ body {
     width: 100%;
     padding: 1rem;
     background: var(--gradient);
-    color: var(--white);
+    color: var(--white)!important;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -866,6 +883,8 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+
 
 .btn-submit::before {
     content: '';
@@ -1257,6 +1276,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .layout-plan{
+        padding-top: 0;
+    }
 
     .hidden-feature {
         display: none;
@@ -1364,7 +1386,7 @@ body {
     }
     
     .overview, .price-section, .master-plan, .gallery, .location-section {
-        padding: 3rem 0;
+        padding: 0rem 0;
     }
     
     .popup-content {
@@ -1443,7 +1465,9 @@ body {
     font-size: 24px;
     margin-bottom: 5px;
 }
-
+.nav-icon img{
+    width: 40px;
+}
 .nav-text {
     font-size: 12px;
     font-weight: 500;
