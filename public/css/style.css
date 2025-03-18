@@ -443,7 +443,7 @@ body {
     color: var(--dark-gray);
 }
 .anim {
-    animation: zoomInOut 2s infinite alternate ease-in-out;
+    animation: zoomInOut 1s infinite alternate ease-in-out;
     text-align: center;
 }
 
@@ -452,7 +452,21 @@ body {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.1);
+    }
+}
+.anim2 {
+    animation: righttoleft 2s infinite alternate ease-in-out;
+    color: red !important;
+    /* text-align: center; */
+}
+
+@keyframes righttoleft {
+    0% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(40%);
     }
 }
 
@@ -1293,6 +1307,14 @@ body {
         display: block; /* Show on mobile */
     }
 
+    #overview-hidden-text {
+        display: none;
+    }
+
+    #overview-hidden-text.show {
+        display: block;
+    }
+
     .master-plan-info h3{
         font-size: 1.2rem;
     }
@@ -1388,6 +1410,10 @@ body {
     
     .overview, .price-section, .master-plan, .gallery, .location-section {
         padding: 2rem 0;
+    }
+
+    .price-section{
+        padding-inline: 1rem;
     }
     
     .popup-content {

@@ -171,44 +171,54 @@
                                 <p>Welcome to Karyan StreetWalk, a premier high-street commercial destination in Wave
                                     City, NH 24, Ghaziabad. Spanning 15,800 square meters on a Three-side open plot,
                                     this vibrant commercial hub is designed to offer a world-class retail and
-                                    entertainment experience. </p>
+                                    entertainment experience.
+                                </p>
                                 <div class="price-actions">
                                     <button class="btn-primary" data-modal="costing">Download Brochure</button>
                                 </div>
-                                <p>Karyan StreetWalk features high-street commercial shops, fine dining & terrace
-                                    restaurants, three multipurpose halls, and two anchor stores, making it an ideal
-                                    investment opportunity. Strategically located on NH 24, it enjoys excellent
-                                    connectivity and a high footfall from the rapidly growing Wave City and surrounding
-                                    areas.
-                                    <br>
-                                    Whether you're a business looking for a prime retail space or an investor seeking
-                                    high returns, Karyan StreetWalk is the perfect choice. Experience modern
-                                    architecture, premium facilities, and a thriving commercial atmosphere—all in one
-                                    landmark destination.
-                                    <br>
-                                    Invest today and be part of Ghaziabad's most sought-after commercial address!
-                                </p>
+                
+                                <!-- Hidden Paragraph for Read More / Read Less -->
+                                <div id="overview-hidden-text">
+                                    <p>
+                                        Karyan StreetWalk features high-street commercial shops, fine dining & terrace
+                                        restaurants, three multipurpose halls, and two anchor stores, making it an ideal
+                                        investment opportunity. Strategically located on NH 24, it enjoys excellent
+                                        connectivity and a high footfall from the rapidly growing Wave City and surrounding
+                                        areas.
+                                        <br>
+                                        Whether you're a business looking for a prime retail space or an investor seeking
+                                        high returns, Karyan StreetWalk is the perfect choice. Experience modern
+                                        architecture, premium facilities, and a thriving commercial atmosphere—all in one
+                                        landmark destination.
+                                        <br>
+                                        Invest today and be part of Ghaziabad's most sought-after commercial address!
+                                    </p>
+                                </div>
+                
+                                <!-- Read More / Read Less Button -->
+                                <div class="read-more-container">
+                                    <button id="overview-read-more-btn" class="read-more-btn">Read More</button>
+                                </div>
                             </div>
+                
                             <div class="overview-stats">
                                 <div class="stat-item">
-                                    <!-- <span class="stat-number">15,800 </span> -->
-                                     <img src="/images/i2.png" alt="">
+                                    <img src="/images/i2.png" alt="">
                                     <span class="stat-number">Ready to Move In</span>
                                 </div>
                                 <div class="stat-item">
-                                    <!-- <span class="stat-number">18+</span> -->
-                                     <img src="/images/i1.png" alt="">
+                                    <img src="/images/i1.png" alt="">
                                     <span class="stat-number">Premium Brand</span>
                                 </div>
                                 <div class="stat-item">
-                                    <!-- <span class="stat-number">6</span> -->
-                                     <img src="/images/i3.png" alt="">
+                                    <img src="/images/i3.png" alt="">
                                     <span class="stat-number">Prime Location at NH-24</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                
 
                 <!-- Price Section -->
                 <section id="price" class="price-section">
@@ -407,7 +417,7 @@
                 </section>
 
                 <!-- Video preview section -->
-                <section id="video">
+                <section id="virtual-tour">
                     <div class="section-container">
                         <h2 class="section-title">Project Preview</h2>
                         <video src="/images/preview-v2.mp4" autoplay muted loop controls width="100%"
@@ -508,7 +518,7 @@
             <aside class="lead-form">
                 <div class="form-container">
                     <h2 class="btn-submit anim">Book a site visit</h2>
-                    <p>Fill in your details below</p>
+                    <p class="anim2">Contact on: +919206001002</p>
                     <form id="leadForm" action="/api/lead-form" method="POST">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Name" required>
@@ -637,4 +647,24 @@
             });
         }
     });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const overviewReadMoreBtn = document.getElementById('overview-read-more-btn');
+    const overviewHiddenText = document.getElementById('overview-hidden-text');
+
+    if (overviewReadMoreBtn && overviewHiddenText) {
+        overviewReadMoreBtn.addEventListener('click', function() {
+            if (overviewHiddenText.classList.contains('show')) {
+                overviewHiddenText.classList.remove('show');
+                overviewReadMoreBtn.textContent = 'Read More';
+            } else {
+                overviewHiddenText.classList.add('show');
+                overviewReadMoreBtn.textContent = 'Read Less';
+            }
+        });
+    }
+});
+
     </script>
