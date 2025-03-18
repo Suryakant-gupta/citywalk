@@ -444,6 +444,7 @@ body {
 }
 .anim {
     animation: zoomInOut 2s infinite alternate ease-in-out;
+    text-align: center;
 }
 
 @keyframes zoomInOut {
@@ -1378,7 +1379,7 @@ body {
     }
     
     .stat-item {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .stat-number {
@@ -1386,7 +1387,7 @@ body {
     }
     
     .overview, .price-section, .master-plan, .gallery, .location-section {
-        padding: 0rem 0;
+        padding: 2rem 0;
     }
     
     .popup-content {
