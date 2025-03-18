@@ -433,70 +433,145 @@ body {
     display: block;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--dark-gray);
 }
 
-.stat-label {
-    color: var(--dark-gray);
-    font-size:1.5rem;
-}
+
 
 /* Price Section */
 .price-section {
-    padding: 5rem 0;
+    width: 100%;
+    padding-inline:  2rem;
+    padding-top: 4rem;
+    
 }
-
-.price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+.ps{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.price-table-wrapper {
+    overflow-x: auto;
     margin-bottom: 2rem;
 }
-
-.price-card {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    /* gap: .5rem; */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
 }
-
-.price-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.price-table th, .price-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
-
-.price-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+.price-table th {
+    background-color: var(--primary-color);
+    color: white;
 }
-
-.price-amount {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--accent-color);
-    margin: 1rem 0;
-}
-
 .btn-price {
     background: var(--gradient);
-    color: var(--white);
-    border: none;
-    padding: 0.8rem 1.5rem;
+    color: white;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-    cursor: pointer;
-    transition: var(--transition);
-    margin-top: 1rem;
     text-decoration: none;
 }
+.price-doc {
+    text-align: center;
+    /* margin-top: 2rem; */
+}
+.price-image {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+.price-grid{
+    display: none;
+}
 
-.btn-price:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+
+@media screen and (max-width:1022px) {
+    .ps{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .price-table-wrapper{
+        display: none;
+    }
+    /* .price-section {
+        padding: 5rem 0;
+    } */
+    
+    .price-grid {
+        /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem; */
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .price-card {
+        width: 100%;
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        text-align: center;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        /* gap: .5rem; */
+    }
+    
+    .price-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .price-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+    
+    .price-amount {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--accent-color);
+        margin: 1rem 0;
+    }
+    
+    .btn-price {
+        background: var(--gradient);
+        color: var(--white);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: var(--transition);
+        margin-top: 1rem;
+        text-decoration: none;
+    }
+    
+    .btn-price:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+    }
 }
 
 /* Master Plan, Layout Plan & Gallery Sections */
@@ -507,8 +582,12 @@ body {
     position: relative;
 }
 
+.master-plan{
+    padding: 0;
+}
 
 .vertical-title {
+    display: none;
     position: absolute;
     right: 0;
     top: 50%;
@@ -544,7 +623,9 @@ body {
     transition: var(--transition);
     cursor: pointer;
 }
-
+.master-plan-info h3{
+    font-size: 1.7rem;
+}
 .master-plan-image:hover {
     transform: scale(1.02);
 }
@@ -552,6 +633,28 @@ body {
 .feature-list {
     list-style: none;
     margin-top: 2rem;
+}
+
+
+.feature-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.read-more-container {
+    text-align: center;
+    margin: 15px 0;
+    display: none; /* Hide by default */
+}
+
+.read-more-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .feature-list li {
@@ -699,15 +802,18 @@ body {
 .form-container h2 {
     margin-bottom: 1rem;
     color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 .form-container p {
     margin-bottom: 2rem;
     color: var(--dark-gray);
+    font-size: 0.95rem;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .form-group input {
@@ -716,12 +822,35 @@ body {
     border: 1px solid var(--light-gray);
     border-radius: 4px;
     transition: var(--transition);
+    box-sizing: border-box;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-group input:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.1);
 }
 
 .form-group input:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: var(--transition);
+}
+
+.form-group:focus-within::after {
+    width: 100%;
 }
 
 .btn-submit {
@@ -734,11 +863,33 @@ body {
     cursor: pointer;
     transition: var(--transition);
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+}
+
+.btn-submit:hover::before {
+    left: 100%;
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Modal */
@@ -1095,8 +1246,33 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+@media (min-width: 769px) {
+    .hidden-feature {
+        display: block;
+    }
+    
+    .read-more-container {
+        display: none !important; /* Force hide on desktop */
+    }
+}
 
 @media (max-width: 768px) {
+
+    .hidden-feature {
+        display: none;
+    }
+    
+    .hidden-feature.show {
+        display: block;
+    }
+    
+    .read-more-container {
+        display: block; /* Show on mobile */
+    }
+
+    .master-plan-info h3{
+        font-size: 1.2rem;
+    }
     .slider-dots{
         bottom: 62px;
     }
@@ -1184,7 +1360,7 @@ body {
     }
     
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     
     .overview, .price-section, .master-plan, .gallery, .location-section {
