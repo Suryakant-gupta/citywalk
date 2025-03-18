@@ -221,7 +221,7 @@ body {
     bottom: 15px;
     right: 20px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: red;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
@@ -389,10 +389,14 @@ body {
 }
 
 .overview-content {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: center; */
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-direction: column;
 }
 
 .overview-text p {
@@ -403,6 +407,7 @@ body {
 
 .price-actions {
     margin: 2rem 0;
+    text-align: center;
 }
 
 .overview-stats {
@@ -426,14 +431,14 @@ body {
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--accent-color);
 }
 
 .stat-label {
     color: var(--dark-gray);
-    font-size: 0.9rem;
+    font-size:1.5rem;
 }
 
 /* Price Section */
@@ -514,16 +519,26 @@ body {
     white-space: nowrap;
     z-index: -1;
 }
+.mp-imgs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .master-plan-content {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 4rem;
-    align-items: center;
+    align-items: center; */
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem ;
+    flex-direction: column;
 }
 
 .master-plan-image {
-    width: 100%;
+    width: calc(50% - 1rem);
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -543,7 +558,8 @@ body {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    list-style-type: none ;  
+    /* list-style-type: none ;   */
+    list-style-position: inside;
 }
 
 
