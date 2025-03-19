@@ -269,7 +269,7 @@ body {
     bottom: 15px;
     right: 20px;
     color: white;
-    background-color: red;
+    background-color: brown;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
@@ -563,7 +563,8 @@ body {
 .anim2 {
     -webkit-animation: righttoleft 2s infinite alternate ease-in-out;
             animation: righttoleft 2s infinite alternate ease-in-out;
-    color: red !important;
+    color: brown !important;
+    font-weight: bold;
     /* text-align: center; */
 }
 
