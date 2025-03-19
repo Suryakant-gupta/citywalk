@@ -23,6 +23,8 @@
 
 
 body {
+    width: 100%;
+    height: 100%;
     font-family: "Merriweather Sans", sans-serif;
     line-height: 1.6;
     color: var(--text-color);
@@ -49,6 +51,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
+    width: 100%;
 }
 
 .main-content {
@@ -176,6 +179,7 @@ body {
 
 /* Banner Section */
 .banner {
+    width: 100%;
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -195,20 +199,20 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    -webkit-transform: scale(1.1);
+    /* -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
     -webkit-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
-    transition: all 0.8s ease;
+    transition: all 0.8s ease; */
     /* margin-top: 1    rem; */
 }
 
 .slide.active {
     opacity: 1;
-    -webkit-transform: scale(1);
+    /* -webkit-transform: scale(1);
         -ms-transform: scale(1);
-            transform: scale(1);
+            transform: scale(1); */
 }
 
 .slide img {
@@ -252,9 +256,9 @@ body {
 
 .slider-btn:hover {
     background: rgba(255, 255, 255, 0.4);
-    -webkit-transform: translateY(-50%) scale(1.1);
+    /* -webkit-transform: translateY(-50%) scale(1.1);
         -ms-transform: translateY(-50%) scale(1.1);
-            transform: translateY(-50%) scale(1.1);
+            transform: translateY(-50%) scale(1.1); */
 }
 
 .prev {
@@ -305,9 +309,9 @@ body {
 
 .dot.active {
     background: var(--accent-color);
-    -webkit-transform: scale(1.2);
+    /* -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
-            transform: scale(1.2);
+            transform: scale(1.2); */
     border: 1px solid var(--primary-color);
 }
 
@@ -439,6 +443,7 @@ body {
 
 /* Overview Section */
 .overview {
+    width: 100%;
     padding: 5rem 0;
     background: var(--light-gray);
 }
@@ -539,16 +544,6 @@ body {
     text-align: center;
 }
 
-@-webkit-keyframes zoomInOut {
-    0% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-}
 
 @keyframes zoomInOut {
     0% {
@@ -579,16 +574,44 @@ body {
     }
 }
 
-@keyframes righttoleft {
-    0% {
-        -webkit-transform: translate(0%);
-                transform: translate(0%);
+@media screen and (max-width: 600px) {
+    .anim {
+        -webkit-animation: zoomInOut 1s infinite alternate ease-in-out;
+                animation: zoomInOut 1s infinite alternate ease-in-out;
+        text-align: center;
     }
-    100% {
-        -webkit-transform: translate(40%);
-                transform: translate(40%);
+    
+    
+    @keyframes zoomInOut {
+        0% {
+            -webkit-transform: scale(0.7);
+                    transform: scale(0.7);
+        }
+        100% {
+            -webkit-transform: scale(0.9);
+                    transform: scale(0.9);
+        }
+    }
+    .anim2 {
+        -webkit-animation: righttoleft 2s infinite alternate ease-in-out;
+                animation: righttoleft 2s infinite alternate ease-in-out;
+        color: brown !important;
+        font-weight: bold;
+        /* text-align: center; */
+    }
+    
+    @-webkit-keyframes righttoleft {
+        0% {
+            -webkit-transform: translate(0%);
+                    transform: translate(0%);
+        }
+        100% {
+            -webkit-transform: translate(20%);
+                    transform: translate(20%);
+        }
     }
 }
+
 
 
 
@@ -1616,7 +1639,7 @@ body {
 
 @media (max-width: 768px) {
     .layout-plan{
-        padding-top: 0;
+        padding-block: 0;
     }
 
     .hidden-feature {
@@ -1706,7 +1729,7 @@ body {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     
     .banner-info h1 {
@@ -1720,7 +1743,9 @@ body {
 
 @media (max-width: 576px) {
     .nav-container {
+        
         padding: 1rem;
+        overflow: hidden;
     }
     
     .section-container {
@@ -1736,7 +1761,7 @@ body {
     }
     
     .stat-item {
-        padding: 1rem;
+        padding: 1rem .5rem;
     }
     
     .stat-number {
@@ -2135,4 +2160,6 @@ body {
         display: none;
     }
 }
+
+
 
