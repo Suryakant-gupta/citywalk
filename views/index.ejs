@@ -524,7 +524,7 @@
                             <input type="text" name="name" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="mobile" placeholder="Mobile No" required>
+                            <input type="number" name="mobile" placeholder="Mobile No" required>
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Email Address" required>
@@ -607,6 +607,23 @@
 
         <script src="/assets/js/try.js"></script>
     </body>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcF6_YqAAAAACKxpS2sd2CUlvRbedkT38G9prwZ"></script>
+
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute("6LcF6_YqAAAAACKxpS2sd2CUlvRbedkT38G9prwZ", { action: "submit" }).then(function (token) {
+        document.getElementById("leadForm").insertAdjacentHTML("beforeend",
+          `<input type="hidden" name="g-recaptcha-response" value="${token}">`);
+        document.getElementById("leadForm").submit(); // Submit the form
+      });
+    });
+  });
+</script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
