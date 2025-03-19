@@ -181,15 +181,17 @@ body {
 .banner {
     width: 100%;
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    height: auto;
+    min-height: 100vh;
+    /* overflow: hidden; */
 }
 
 .slider {
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: var(--accent-color);
+    
 }
 
 .slide {
@@ -446,6 +448,10 @@ body {
     width: 100%;
     padding: 5rem 0;
     background: var(--light-gray);
+    position: relative;
+    z-index: 1;
+    margin-top: 0; /* Ensure no unexpected margin */
+    clear: both; /* Clear any floats */
 }
 
 .section-container {
@@ -1072,6 +1078,8 @@ body {
 
 .form-container {
     padding: 2rem;
+    /* display: none; */
+    overflow: hidden;
 }
 
 .form-container h2 {
@@ -1708,10 +1716,8 @@ body {
     }
     
     .key-features {
-        -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr; /* Change to 2 columns on smaller screens */
     }
-    
     .location-map img {
         width: 100%;
     }
@@ -2059,18 +2065,27 @@ body {
 
 /* Responsive Updates */
 @media (max-width: 1000px) {
+    .banner {
+        width: 100%;
+        position: relative;
+        height: auto; /* Changed from 100vh to auto */
+        min-height: 100vh; /* Added min-height for desktop */
+        display: block;
+        
+    }
     .banner-info {
         position: relative;
         top: auto;
         left: auto;
         -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
+        -ms-transform: none;
+        transform: none;
         max-width: none;
         background: var(--white);
         color: var(--text-color);
         padding: 2rem;
         border-radius: 0;
+        z-index: 1;
     }
     
     .banner-info h1 {
@@ -2087,6 +2102,18 @@ body {
     
     .slider {
         height: 60vh;
+    }
+   
+    .banner + .overview {
+        
+        margin-top: 168px;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .banner + .overview {
+        
+        margin-top:270px;
     }
 }
 
@@ -2144,11 +2171,16 @@ body {
         width: 30px;
         height: 30px;
     }
+
+   
 }
 
 @media (max-width: 576px) {
     .banner-info h1 {
         font-size: 2rem;
+    }
+    .slider{
+        height: 50vh;
     }
     
     .key-features {
@@ -2159,7 +2191,18 @@ body {
     .testimonial-btn {
         display: none;
     }
+
+    .banner + .overview {
+        
+        margin-top: 300px;
+    }
 }
 
 
 
+@media screen and (min-width: 580px) {
+    .banner + .overview {
+        
+        margin-top: 159px;
+    }
+}
